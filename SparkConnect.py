@@ -363,7 +363,7 @@ def main():
     post_spark_room_message(spark_room_id, 'HotSpot {Spark:Connect} has been disabled')
     post_spark_room_message(spark_room_id, 'Thank you for using our service')
 
-    # delete Room - optional step
+    # delete Room - optional step, not required
 
     if input('Do you want to delete the {Spark:Connect} Spark Room ?  (y/n)  ') == 'y':
         delete_spark_room(spark_room_id)
