@@ -144,7 +144,7 @@ def main():
     Only some functions will be used. The other functions are provided as a reference.
     """
 
-    # create a new Saprk Room?
+    # create a new Spark Room?
 
     new_room = input('Do you want to create a new Spark Room ? (y/n): ')
     if new_room is 'y':
