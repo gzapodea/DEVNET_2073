@@ -302,9 +302,9 @@ def main():
         last_message = last_spark_room_message(spark_room_id)[0]
         if last_message == '/E':
             last_person_email = last_spark_room_message(spark_room_id)[1]
-            post_spark_room_message(spark_room_id, 'How long time do you need the HotSpot for? (in minutes)  : ')
+            post_spark_room_message(spark_room_id, 'How long time do you need the HotSpot for? (in minutes) : ')
             time.sleep(10)
-            if last_spark_room_message(spark_room_id)[0] == 'How long time do you need this room for? (in minutes)  : ':
+            if last_spark_room_message(spark_room_id)[0] == 'How long time do you need the HotSpot for? (in minutes) : ':
                 timer = 30 * 60
             else:
                 timer = int(last_spark_room_message(spark_room_id)[0]) * 60
