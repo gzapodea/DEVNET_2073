@@ -1,4 +1,4 @@
-# developed by Gabi Zapodeanu, Cisco Systems, TSA, GPO
+# developed by Gabi Zapodeanu, TSA, GSS, Cisco Systems
 
 # !/usr/bin/env python3
 
