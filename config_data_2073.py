@@ -22,3 +22,4 @@ APIC_EM_PASSW = 'Cisco123!'
 CMX_URL = 'https://cmxlocationsandbox.cisco.com/'
 CMX_USER = 'learning'
 CMX_PASSW = 'learning'
+
