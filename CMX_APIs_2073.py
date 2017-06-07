@@ -45,9 +45,13 @@ def get_cmx_client_count():
     :return: number of clients
     """
     url = CMX_URL + 'api/location/v2/clients/count'
+    print('\nThe API url: ', url)
     header = {'content-type': 'application/json', 'accept': 'application/json'}
     response = requests.get(url, headers=header, auth=CMX_AUTH, verify=False)
+    print('\nThe API response status code: ',response)
     client_json = response.json()
+    print('\nThe API response JSON body :')
+    pprint(client_json)
     client_count = client_json['count']
     return client_count
 
@@ -128,9 +132,9 @@ def main():
     # find information about an active client
 
     client_mac_address = '00:00:2a:01:00:04'  # select a mac address from the provided list
-    print('CMX information for the client with the MAC Address: ', client_mac_address)
+    print('\nCMX information for the client with the MAC Address: ', client_mac_address)
     wlc_ip_address = check_mac_cmx_client(client_mac_address)
-    print('WLC IP address: ', wlc_ip_address)
+    print('\nWLC IP address: ', wlc_ip_address)
 
 
 if __name__ == '__main__':
