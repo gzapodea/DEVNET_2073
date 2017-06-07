@@ -136,6 +136,9 @@ def main():
     wlc_ip_address = check_mac_cmx_client(client_mac_address)
     print('\nWLC IP address: ', wlc_ip_address)
 
+    print('\nEnd of Application Run')
+
 
 if __name__ == '__main__':
     main()
+
