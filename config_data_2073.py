@@ -19,6 +19,6 @@ APIC_EM_PASSW = 'Cisco123!'
 
 # CMX declarations
 
-CMX_URL = 'https://msesandbox.cisco.com:8081/'
+CMX_URL = 'https://cmxlocationsandbox.cisco.com/'
 CMX_USER = 'learning'
 CMX_PASSW = 'learning'

@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module SparkConnect</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>SparkConnect</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/gzapodea/PythonCode/DEVNET_2073/SparkConnect.py">/Users/gzapodea/PythonCode/DEVNET_2073/SparkConnect.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;developed&nbsp;by&nbsp;Gabi&nbsp;Zapodeanu,&nbsp;TSA,&nbsp;GSS,&nbsp;Cisco&nbsp;Systems</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="base64.html">base64</a><br>
+</td><td width="25%" valign=top><a href="json.html">json</a><br>
+</td><td width="25%" valign=top><a href="requests.html">requests</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-add_spark_room_membership"><strong>add_spark_room_membership</strong></a>(room_Id, email_invite)</dt><dd><tt>Action:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this&nbsp;function&nbsp;will&nbsp;add&nbsp;membership&nbsp;to&nbsp;the&nbsp;Spark&nbsp;room&nbsp;with&nbsp;the&nbsp;room&nbsp;Id<br>
+Call&nbsp;to:&nbsp;&nbsp;&nbsp;&nbsp;Spark&nbsp;-&nbsp;/memberships<br>
+Input:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;room&nbsp;Id&nbsp;and&nbsp;email&nbsp;address&nbsp;to&nbsp;invite,&nbsp;global&nbsp;variable&nbsp;-&nbsp;Spark&nbsp;auth&nbsp;access&nbsp;token<br>
+Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;none</tt></dd></dl>
+ <dl><dt><a name="-check_cmx_client"><strong>check_cmx_client</strong></a>(username)</dt><dd><tt>Action:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this&nbsp;function&nbsp;will&nbsp;find&nbsp;out&nbsp;the&nbsp;WLC&nbsp;controller&nbsp;IP&nbsp;address&nbsp;for&nbsp;a&nbsp;client&nbsp;authenticated&nbsp;with&nbsp;the&nbsp;username<br>
+Call&nbsp;to:&nbsp;&nbsp;&nbsp;&nbsp;CMX&nbsp;-&nbsp;/api/location/v2/clients/?username={username}<br>
+Input:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;username,&nbsp;global&nbsp;variable&nbsp;-&nbsp;CMX_AUTH&nbsp;-&nbsp;HTTP&nbsp;Basic&nbsp;Auth<br>
+Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WLC&nbsp;controller&nbsp;IP&nbsp;address</tt></dd></dl>
+ <dl><dt><a name="-create_spark_room"><strong>create_spark_room</strong></a>(room_name)</dt><dd><tt>Action:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this&nbsp;function&nbsp;will&nbsp;create&nbsp;a&nbsp;Spark&nbsp;room&nbsp;with&nbsp;the&nbsp;title&nbsp;room&nbsp;name<br>
+Call&nbsp;to:&nbsp;&nbsp;&nbsp;&nbsp;Spark&nbsp;-&nbsp;/rooms<br>
+Input:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;room&nbsp;name,&nbsp;global&nbsp;variable&nbsp;-&nbsp;Spark&nbsp;auth&nbsp;access&nbsp;token<br>
+Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;Spark&nbsp;room&nbsp;Id</tt></dd></dl>
+ <dl><dt><a name="-delete_spark_room"><strong>delete_spark_room</strong></a>(room_id)</dt><dd><tt>Action:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this&nbsp;function&nbsp;will&nbsp;delete&nbsp;the&nbsp;Spark&nbsp;room&nbsp;with&nbsp;the&nbsp;room&nbsp;Id<br>
+Call&nbsp;to:&nbsp;&nbsp;&nbsp;&nbsp;Spark&nbsp;-&nbsp;/rooms<br>
+Input:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;room&nbsp;Id,&nbsp;global&nbsp;variable&nbsp;-&nbsp;Spark&nbsp;auth&nbsp;access&nbsp;token<br>
+Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;none</tt></dd></dl>
+ <dl><dt><a name="-deploy_PI_wlan_template"><strong>deploy_PI_wlan_template</strong></a>(controller_name, template_name)</dt><dd><tt>Action:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deploy&nbsp;a&nbsp;WLAN&nbsp;template&nbsp;to&nbsp;a&nbsp;wireless&nbsp;controller&nbsp;through&nbsp;job<br>
+Call&nbsp;to:&nbsp;&nbsp;&nbsp;&nbsp;Prime&nbsp;Infrastructure&nbsp;-&nbsp;/webacs/api/v1/op/wlanProvisioning/deployTemplate<br>
+Input:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WLC&nbsp;Prime&nbsp;Infrastructure&nbsp;id,&nbsp;WLAN&nbsp;template&nbsp;name,&nbsp;global&nbsp;variable&nbsp;-&nbsp;PI_Auth,&nbsp;HTTP&nbsp;basic&nbsp;auth&nbsp;<br>
+Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;job&nbsp;number</tt></dd></dl>
+ <dl><dt><a name="-find_spark_room_id"><strong>find_spark_room_id</strong></a>(room_name)</dt><dd><tt>Action:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this&nbsp;function&nbsp;will&nbsp;find&nbsp;the&nbsp;Spark&nbsp;room&nbsp;id&nbsp;based&nbsp;on&nbsp;the&nbsp;room&nbsp;name<br>
+Call&nbsp;to:&nbsp;&nbsp;&nbsp;&nbsp;Spark&nbsp;-&nbsp;/rooms<br>
+Input:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;room&nbsp;name,&nbsp;global&nbsp;variable&nbsp;-&nbsp;Spark&nbsp;auth&nbsp;access&nbsp;token<br>
+Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;Spark&nbsp;room&nbsp;Id</tt></dd></dl>
+ <dl><dt><a name="-get_EM_service_ticket"><strong>get_EM_service_ticket</strong></a>()</dt><dd><tt>Action:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;create&nbsp;an&nbsp;authorization&nbsp;ticket&nbsp;required&nbsp;to&nbsp;access&nbsp;APIC-EM<br>
+Call&nbsp;to:&nbsp;&nbsp;&nbsp;&nbsp;APIC-EM&nbsp;-&nbsp;/ticket<br>
+Input:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global&nbsp;variables:&nbsp;APIC-EM&nbsp;IP&nbsp;address,&nbsp;password&nbsp;and&nbsp;username<br>
+Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ticket,&nbsp;if&nbsp;created</tt></dd></dl>
+ <dl><dt><a name="-get_PI_device_Id"><strong>get_PI_device_Id</strong></a>(device_name)</dt><dd><tt>Action:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;find&nbsp;out&nbsp;the&nbsp;PI&nbsp;device&nbsp;Id&nbsp;using&nbsp;the&nbsp;device&nbsp;hostname<br>
+Call&nbsp;to:&nbsp;&nbsp;&nbsp;&nbsp;Prime&nbsp;Infrastructure&nbsp;-&nbsp;/webacs/api/v1/data/Devices,&nbsp;filtered&nbsp;using&nbsp;the&nbsp;Device&nbsp;Hostname<br>
+Input:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;device&nbsp;hostname,&nbsp;global&nbsp;variable&nbsp;-&nbsp;PI_Auth,&nbsp;HTTP&nbsp;basic&nbsp;auth<br>
+Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PI&nbsp;device&nbsp;Id</tt></dd></dl>
+ <dl><dt><a name="-get_PI_job_status"><strong>get_PI_job_status</strong></a>(job_name)</dt><dd><tt>Action:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get&nbsp;PI&nbsp;job&nbsp;status<br>
+Call&nbsp;to:&nbsp;&nbsp;&nbsp;&nbsp;PI&nbsp;-&nbsp;/webacs/api/v1/data/JobSummary,&nbsp;filtered&nbsp;by&nbsp;the&nbsp;job&nbsp;name,&nbsp;will&nbsp;provide&nbsp;the&nbsp;job&nbsp;id<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;second&nbsp;call&nbsp;to&nbsp;/webacs/api/v1/data/JobSummary&nbsp;using&nbsp;the&nbsp;job&nbsp;id<br>
+Input:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prime&nbsp;Infrastructure&nbsp;job&nbsp;name,&nbsp;global&nbsp;variable&nbsp;-&nbsp;PI_Auth,&nbsp;HTTP&nbsp;basic&nbsp;auth<br>
+Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;job&nbsp;status</tt></dd></dl>
+ <dl><dt><a name="-get_controller_hostname"><strong>get_controller_hostname</strong></a>(ip_address, ticket)</dt><dd><tt>Action:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;find&nbsp;out&nbsp;the&nbsp;hostname&nbsp;of&nbsp;the&nbsp;WLC&nbsp;controller<br>
+Call&nbsp;to:&nbsp;&nbsp;&nbsp;&nbsp;APIC-EM&nbsp;-&nbsp;network-device/ip-address/{ipAddress}<br>
+Input:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WLC&nbsp;Controller&nbsp;IP&nbsp;address,&nbsp;APIC-EM&nbsp;ticket<br>
+Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wireless&nbsp;controller&nbsp;hostname</tt></dd></dl>
+ <dl><dt><a name="-last_spark_room_message"><strong>last_spark_room_message</strong></a>(room_Id)</dt><dd><tt>Action:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this&nbsp;function&nbsp;will&nbsp;find&nbsp;the&nbsp;last&nbsp;message&nbsp;from&nbsp;the&nbsp;Spark&nbsp;room&nbsp;with&nbsp;the&nbsp;room&nbsp;Id<br>
+Call&nbsp;to:&nbsp;&nbsp;&nbsp;&nbsp;Spark&nbsp;-&nbsp;/messages<br>
+Input:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;room&nbsp;Id,&nbsp;global&nbsp;variable&nbsp;-&nbsp;Spark&nbsp;auth&nbsp;access&nbsp;token<br>
+Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;last&nbsp;room&nbsp;message&nbsp;and&nbsp;person&nbsp;email</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt><dd><tt>A&nbsp;small&nbsp;number&nbsp;of&nbsp;APIs&nbsp;requests&nbsp;will&nbsp;create&nbsp;a&nbsp;new&nbsp;application&nbsp;to&nbsp;enable&nbsp;on-demand&nbsp;Wi-Fi&nbsp;guest&nbsp;networks.<br>
+&nbsp;<br>
+We&nbsp;will&nbsp;interact&nbsp;with&nbsp;Spark’s&nbsp;easy&nbsp;to&nbsp;use&nbsp;APIs&nbsp;to&nbsp;read&nbsp;room&nbsp;messages,&nbsp;and&nbsp;with&nbsp;CMX&nbsp;to&nbsp;locate&nbsp;users&nbsp;of&nbsp;our<br>
+Application&nbsp;in&nbsp;the&nbsp;Enterprise&nbsp;network.<br>
+APIC-EM&nbsp;device&nbsp;inventory&nbsp;accessed&nbsp;through&nbsp;APIs&nbsp;will&nbsp;identify&nbsp;the&nbsp;Wireless&nbsp;LAN&nbsp;Controllers.<br>
+The&nbsp;Prime&nbsp;Infrastructure&nbsp;WLAN&nbsp;configuration&nbsp;APIs&nbsp;will&nbsp;ensure&nbsp;configuration&nbsp;will&nbsp;only&nbsp;be&nbsp;deployed<br>
+to&nbsp;the&nbsp;user’s&nbsp;physical&nbsp;location.<br>
+&nbsp;<br>
+Simple&nbsp;script&nbsp;changes&nbsp;could&nbsp;create&nbsp;Hotspot&nbsp;networks&nbsp;based&nbsp;on&nbsp;schedule,&nbsp;incident&nbsp;response&nbsp;or&nbsp;social&nbsp;events.</tt></dd></dl>
+ <dl><dt><a name="-post_spark_room_message"><strong>post_spark_room_message</strong></a>(room_id, message)</dt><dd><tt>Action:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this&nbsp;function&nbsp;will&nbsp;post&nbsp;a&nbsp;message&nbsp;to&nbsp;the&nbsp;Spark&nbsp;room&nbsp;with&nbsp;the&nbsp;room&nbsp;Id<br>
+Call&nbsp;to:&nbsp;&nbsp;&nbsp;&nbsp;Spark&nbsp;-&nbsp;/messages<br>
+Input:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;room&nbsp;Id&nbsp;and&nbsp;the&nbsp;message,&nbsp;global&nbsp;variable&nbsp;-&nbsp;Spark&nbsp;auth&nbsp;access&nbsp;token<br>
+Output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;none</tt></dd></dl>
+ <dl><dt><a name="-pprint"><strong>pprint</strong></a>(json_data)</dt><dd><tt>Pretty&nbsp;print&nbsp;JSON&nbsp;formatted&nbsp;data<br>
+:param&nbsp;json_data:<br>
+:return:</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>CMX_AUTH</strong> = &lt;requests.auth.HTTPBasicAuth object&gt;<br>
+<strong>CMX_PASSW</strong> = 'Clive!17'<br>
+<strong>CMX_URL</strong> = 'https://172.16.11.27/'<br>
+<strong>CMX_USER</strong> = 'python'<br>
+<strong>EM_PASSW</strong> = 'Clive.17'<br>
+<strong>EM_URL</strong> = 'https://172.16.11.30/api/v1'<br>
+<strong>EM_USER</strong> = 'python'<br>
+<strong>IT_ENG_EMAIL</strong> = 'gabriel.zapodeanu@gmail.com'<br>
+<strong>PI_AUTH</strong> = &lt;requests.auth.HTTPBasicAuth object&gt;<br>
+<strong>PI_PASSW</strong> = 'Clive.17'<br>
+<strong>PI_URL</strong> = 'https://172.16.11.25'<br>
+<strong>PI_USER</strong> = 'python'<br>
+<strong>ROOM_NAME</strong> = '{Spark:Connect}'<br>
+<strong>SPARK_AUTH</strong> = 'Bearer ZTc0ZGUzNTctMWFlNC00ODQzLWFkYWEtMGI4ZDNkYTE5YjRlYjM2ZDZkNDEtOGEx'<br>
+<strong>SPARK_URL</strong> = 'https://api.ciscospark.com/v1'<br>
+<strong>WIFI_SSID</strong> = 'CLIVE'<br>
+<strong>WLAN_DEPLOY</strong> = 'SparkConnect'<br>
+<strong>WLAN_DISABLE</strong> = 'DisableSparkConnect'</td></tr></table>
+</body></html>
