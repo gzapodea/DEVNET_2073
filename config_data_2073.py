@@ -7,7 +7,7 @@
 # Spark declarations
 
 SPARK_URL = 'https://api.ciscospark.com/v1'
-SPARK_AUTH = 'Bearer ' + 'MTg4NmU1MmItNWFlMi00M2I5LWEyNmYtZjFjYjBjYTQyMWE0NGNhN2M2NDktYTY4'
+SPARK_AUTH = 'Bearer ' + 'Put your Spark Token here'
 ROOM_NAME = 'DEVNET-2073-lab'
 IT_ENG_EMAIL = 'gabriel.zapodeanu@gmail.com'
 
