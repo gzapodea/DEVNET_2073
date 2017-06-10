@@ -43,11 +43,11 @@ def get_service_ticket():
     header = {'content-type': 'application/json'}
     ticket_response = requests.post(url, data=json.dumps(payload), headers=header, verify=False)
     if not ticket_response:
-        print('No data returned!')
+        print('\nNo data returned!')
     else:
         ticket_json = ticket_response.json()
         ticket = ticket_json['response']['serviceTicket']
-        print('Created APIC-EM ticket: ', ticket)
+        print('\nCreated APIC-EM ticket: ', ticket)
         return ticket
 
 
@@ -63,7 +63,7 @@ def get_device_hostname(ip_address):
     header = {'accept': 'application/json', 'X-Auth-Token': APIC_EM_TICKET}
     device_response = requests.get(url, headers=header, verify=False)
     device_json = device_response.json()
-    print('Network device information:')
+    print('\nNetwork device information:')
     pprint(device_json)
     hostname = device_json['response']['hostname']
     return hostname
@@ -85,8 +85,9 @@ def main():
     # find the hostname for a network device which by using the IP address
 
     device_ip_address = '10.255.1.5'
+
     device_hostname = get_device_hostname(device_ip_address)
-    print('Network Device Hostname is: ', device_hostname, ' , IP address: ', device_ip_address)
+    print('\nNetwork Device Hostname is: ', device_hostname, ' , IP address: ', device_ip_address)
 
 
 if __name__ == '__main__':
