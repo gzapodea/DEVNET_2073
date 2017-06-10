@@ -7,7 +7,7 @@
 # Spark declarations
 
 SPARK_URL = 'https://api.ciscospark.com/v1'
-SPARK_AUTH = 'Bearer ' + 'Put your Spark token here'
+SPARK_AUTH = 'Bearer ' + 'MTg4NmU1MmItNWFlMi00M2I5LWEyNmYtZjFjYjBjYTQyMWE0NGNhN2M2NDktYTY4'
 ROOM_NAME = 'DEVNET-2073-lab'
 IT_ENG_EMAIL = 'gabriel.zapodeanu@gmail.com'
 
@@ -22,3 +22,4 @@ APIC_EM_PASSW = 'Cisco123!'
 CMX_URL = 'https://cmxlocationsandbox.cisco.com/'
 CMX_USER = 'learning'
 CMX_PASSW = 'learning'
+
