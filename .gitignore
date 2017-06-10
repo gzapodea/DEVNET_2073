@@ -1,2 +1,4 @@
-config_data_2073.py
-SparkConnect_init.py
+/config_data_2073.py
+/SparkConnect_init.py
+.idea/
+__pycache__/
