@@ -67,7 +67,7 @@ def all_active_client_mac():
     header = {'content-type': 'application/json', 'accept': 'application/json'}
     mac_response = requests.get(url, headers=header, auth=CMX_AUTH, verify=False)
     mac_active_clients_json = mac_response.json()
-    print('MAC addresses of all active clients: ')
+    print('\nMAC addresses of all active clients: \n')
     pprint(mac_active_clients_json)
 
 
@@ -132,7 +132,7 @@ def main():
     # find information about an active client
 
     client_mac_address = '00:00:2a:01:00:04'  # select a mac address from the provided list
-    print('\nCMX information for the client with the MAC Address: ', client_mac_address)
+    print('\nCMX information for the client with the MAC Address: ', client_mac_address, '\n')
     wlc_ip_address = check_mac_cmx_client(client_mac_address)
     print('\nWLC IP address: ', wlc_ip_address)
 

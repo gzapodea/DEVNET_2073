@@ -175,6 +175,8 @@ def main():
     last_email = last_spark_room_message(devnet_room_id)[1]
     print('\n\nThe last message : ', last_message, ', was posted by : ', last_email)
 
+    print('\nEnd of Application Run')
+
 
 if __name__ == '__main__':
     main()
