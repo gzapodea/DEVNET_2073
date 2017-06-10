@@ -77,7 +77,7 @@ def main():
     We will print the name of the network device.
     """
 
-    # create an auth ticket for APIC-EM
+    # create the auth ticket for APIC-EM
 
     global APIC_EM_TICKET    # make the ticket a global variable in this module
     APIC_EM_TICKET = get_service_ticket()
