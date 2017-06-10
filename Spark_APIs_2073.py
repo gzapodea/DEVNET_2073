@@ -1,6 +1,5 @@
 # developed by Gabi Zapodeanu, TSA, GSS, Cisco Systems
 
-
 # !/usr/bin/env python3
 
 # Spark Accounts are required for this demo
