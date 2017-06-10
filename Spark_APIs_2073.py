@@ -5,7 +5,7 @@
 
 # Spark Accounts are required for this demo
 # Attendees will need to register to ciscospark.com if they do not have an account already
-# A Spark token will be required
+# The Spark token will be copied from developers.ciscospark.com
 
 
 import requests
@@ -41,9 +41,10 @@ def create_spark_room(room_name):
 
     payload = {'title': room_name}
     url = SPARK_URL + '/rooms'
-    print(url)
+    print('\nThe Spark API request URL: ', url)
     header = {'content-type': 'application/json', 'authorization': SPARK_AUTH}
     room_response = requests.post(url, data=json.dumps(payload), headers=header, verify=False)
+    print('\nThe Spark API request status code: ', room_response.status_code)
     room_json = room_response.json()
     room_number = room_json['id']
     return room_number
@@ -154,24 +155,26 @@ def main():
     # find the Spark room id for the room with the name {DEVNET-2073-lab}
 
     devnet_room_id = find_spark_room_id(ROOM_NAME)
-    print('The Spark room id for the room with the name ', ROOM_NAME, ' is: ', devnet_room_id)
+    print('\nThe Spark room id for the room with the name ', ROOM_NAME, ' is: ', devnet_room_id)
 
     # ask user to input a message
 
     spark_message = input('Please input a message in the room  ')
-    print('This message will be posted in the room with the name ', ROOM_NAME, ' : ', spark_message)
+    print('\nThis message will be posted in the room with the name ', ROOM_NAME, ' : ', spark_message)
 
     # post a message in the room
     post_spark_room_message(devnet_room_id, spark_message)
 
     # wait a random time between 10 and 30 seconds and find out the last message posted on the room
-    timer = randint(10, 30)
-    print('We will wait for ', timer, ' seconds and check for the last message in the room')
+    timer = randint(30, 45)
+    print('\nWe will wait for ', timer, ' seconds.')
+    print('\nPlease go to your Cisco Spark Client and post a message in the ', ROOM_NAME)
+    print('\nWe will retrieve this message and the username')
     time.sleep(timer)
 
     last_message = last_spark_room_message(devnet_room_id)[0]
     last_email = last_spark_room_message(devnet_room_id)[1]
-    print('The last message : ', last_message, ', was posted by : ', last_email)
+    print('\nThe last message : ', last_message, ', was posted by : ', last_email)
 
 
 if __name__ == '__main__':
