@@ -25,7 +25,7 @@ from config_data_2073 import CMX_URL, CMX_USER, CMX_PASSW
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)  # Disable insecure https warnings
 
-CMX_AUTH = HTTPBasicAuth(CMX_USER, CMX_PASSW)  #  http basic auth
+CMX_AUTH = HTTPBasicAuth(CMX_USER, CMX_PASSW)  # http basic auth
 
 
 def pprint(json_data):
@@ -48,7 +48,7 @@ def get_cmx_client_count():
     print('\nThe API url: ', url)
     header = {'content-type': 'application/json', 'accept': 'application/json'}
     response = requests.get(url, headers=header, auth=CMX_AUTH, verify=False)
-    print('\nThe API response status code: ',response)
+    print('\nThe API response status code: ', response)
     client_json = response.json()
     print('\nThe API response JSON body :')
     pprint(client_json)
