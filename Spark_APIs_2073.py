@@ -173,7 +173,7 @@ def main():
 
     last_message = last_spark_room_message(devnet_room_id)[0]
     last_email = last_spark_room_message(devnet_room_id)[1]
-    print('\nThe last message : ', last_message, ', was posted by : ', last_email)
+    print('\n\nThe last message : ', last_message, ', was posted by : ', last_email)
 
 
 if __name__ == '__main__':
