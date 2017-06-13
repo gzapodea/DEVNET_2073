@@ -277,15 +277,9 @@ def get_pi_job_status(job_name):
 
 def main():
     """
-    A small number of APIs requests will create a new application to enable on-demand Wi-Fi guest networks.
-
-    We will interact with Spark’s easy to use APIs to read room messages, and with CMX to locate users of our
-    Application in the Enterprise network.
-    APIC-EM device inventory accessed through APIs will identify the Wireless LAN Controllers.
-    The Prime Infrastructure WLAN configuration APIs will ensure configuration will only be deployed
-    to the user’s physical location.
-
-    Simple script changes could create Hotspot networks based on schedule, incident response or social events.
+    This program will dynamically enable a Wi-Fi Hotspot based on the user request, and his/her presence in the
+    Enterprise Network.
+    LAN switches, WLAN Controllers and AP's, CMX and Cisco Spark are required for this application.
     """
 
     # verify if Spark Room exists, if not create Spark Room, and add membership (optional)
