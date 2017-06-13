@@ -1,10 +1,11 @@
 
 
+# coding: utf8
+
 # developed by Gabi Zapodeanu, TSA, GSS, Cisco Systems
 
 
 # !/usr/bin/env python3
-# coding: utf-8
 
 
 import requests
@@ -314,7 +315,7 @@ def main():
             last_person_email = last_spark_room_message(spark_room_id)[1]
             post_spark_room_message(spark_room_id, 'How long time do you need the HotSpot for? (in minutes) : ')
             time.sleep(10)
-            if last_spark_room_message(spark_room_id)[0] == 'How long time do you need the HotSpot for? (in minutes) : ':
+            if last_spark_room_message(spark_room_id)[0] == 'How long time do you need the HotSpot for? (in minutes) :':
                 timer = 30 * 60
             else:
                 timer = int(last_spark_room_message(spark_room_id)[0]) * 60
