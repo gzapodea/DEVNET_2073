@@ -4,6 +4,7 @@
 
 
 # !/usr/bin/env python3
+# coding: utf-8
 
 
 import requests
@@ -378,6 +379,7 @@ def main():
     if input('Do you want to delete the {Spark:Connect} Spark Room ?  (y/n)  ') == 'y':
         delete_spark_room(spark_room_id)
 
+    print('\nEnd of Application Run!')
 
 if __name__ == '__main__':
     main()
