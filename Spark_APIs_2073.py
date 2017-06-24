@@ -147,8 +147,8 @@ def main():
 
     # create a new Spark Room?
 
-    new_room = input('Do you want to create a new Spark Room ? (y/n): ')
-    if new_room is 'y':
+    new_room = input('Do you want to create a new Spark Room ? (y/n): ').upper()
+    if new_room == 'Y':
         create_spark_room(ROOM_NAME)
 
     # find the Spark room id for the room with the name {DEVNET-2073-lab}

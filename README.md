@@ -2,7 +2,11 @@
 
 This repository will be used for the Cisco Live US DEVNET-2073 session
 
-Software included: Spark APIs, CMX APIs, APIC-EM APIs, {Spark:Connect} full lab code.
+Software included:
+ - Spark_APIs_2073.py
+ - CMX_APIs_2073.py
+ - APIC-EM_APIs_2073.py
+ - SparkConnect.py full lab code.
 
 During this lab we will use Cisco Spark and two DevNet Sandboxes for APIC-EM and CMX
 
