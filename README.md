@@ -1,6 +1,6 @@
 # DEVNET-2073
 
-This repository will be used for the Cisco Live US DEVNET-2073 session
+This repository will be used for the Cisco Live DEVNET-2073 session
 
 Software included:
  - Spark_APIs_2073.py
