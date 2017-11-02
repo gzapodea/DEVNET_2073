@@ -1,4 +1,5 @@
-# developed by Gabi Zapodeanu, TSA, GSS, Cisco Systems
+
+# developed by Gabi Zapodeanu, TSA, GPO, Cisco Systems
 
 # !/usr/bin/env python3
 
@@ -147,19 +148,22 @@ def main():
 
     # create a new Spark Room?
 
-    new_room = input('Do you want to create a new Spark Room ? (y/n): ').upper()
+    new_room = input('\nDo you want to create a new Spark Room ? (y/n): ').upper()
     if new_room == 'Y':
         create_spark_room(ROOM_NAME)
 
     # find the Spark room id for the room with the name {DEVNET-2073-lab}
 
     devnet_room_id = find_spark_room_id(ROOM_NAME)
+    if devnet_room_id == None:
+        devnet_room_id = create_spark_room(ROOM_NAME)
+
     print('\nThe Spark room id for the room with the name ', ROOM_NAME, ' is: ', devnet_room_id)
 
     # ask user to input a message
 
-    spark_message = input('Please input a message in the room  ')
-    print('\nThis message will be posted in the room with the name ', ROOM_NAME, ' : ', spark_message)
+    spark_message = input('\nPlease input a message in the room  ')
+    print('\nThis message will be posted in the room with the name ', ROOM_NAME, ' : ', spark_message, '\n')
 
     # post a message in the room
     post_spark_room_message(devnet_room_id, spark_message)
@@ -168,7 +172,7 @@ def main():
     timer = randint(30, 45)
     print('\nWe will wait for ', timer, ' seconds.')
     print('\nPlease go to your Cisco Spark Client and post a message in the ', ROOM_NAME)
-    print('\nWe will retrieve this message and the username')
+    print('\nWe will retrieve this message and the name of the user that entered the message')
     time.sleep(timer)
 
     last_message = last_spark_room_message(devnet_room_id)[0]
