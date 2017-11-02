@@ -1,10 +1,11 @@
-# developed by Gabi Zapodeanu, TSA, GSS, Cisco Systems
 
+
+# developed by Gabi Zapodeanu, TSA, GPO, Cisco Systems
 
 # !/usr/bin/env python3
 
 # We will use the Cisco CMX Sandbox for this lab https://msesandbox.cisco.com:8081
-# API docs: https://msesandbox.cisco.com:8081/apidocs/
+# API docs: https://cmxlocationsandbox.cisco.com/apidocs/
 
 # clients mac addresses to use
 # '00:00:2a:01:00:0f'
